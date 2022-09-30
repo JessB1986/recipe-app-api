@@ -12,7 +12,7 @@ class ModelTests(TestCase):
     def test_create_user_with_email_successful(self):
         """ Test creating a user with an email is successful."""
         email = 'test@example.com'
-        password =  'testpass123'
+        password = 'testpass123'
         user = get_user_model().objects.create_user(
             email=email,
             password=password,
@@ -25,7 +25,7 @@ class ModelTests(TestCase):
         """Test email is normalized for new users."""
         sample_emails = [
             ['test1@EXAMPLE.com', 'test1@example.com'],
-            ['test2@Example.com', 'Test2@example.com'],
+            ['Test2@Example.com', 'Test2@example.com'],
             ['TEST3@EXAMPLE.COM', 'TEST3@example.com'],
             ['test4@example.COM', 'test4@example.com'],
         ]
